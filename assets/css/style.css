@@ -1507,7 +1507,7 @@ q {
 }
 
 .speaker-control.unmuted i {
-  color: #4CAF50; /* Green when unmuted */
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Tooltip */
