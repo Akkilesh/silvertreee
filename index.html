@@ -32,6 +32,8 @@
 
     <link rel="stylesheet" href="./assets/css/demo/saas.css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -912,9 +914,14 @@
      <section class="lqd-section banner pt-20 px-75" id="banner">
 
   <!-- 🔥 Background Video Only -->
-  <video class="banner-video-bg" autoplay muted loop playsinline>
-    <source src="./assets/videos/showreel.mp4" type="video/mp4" />
+<video class="banner-video-bg" id="homeVideo" autoplay muted loop playsinline> 
+     <source src="./assets/videos/showreel.mp4" type="video/mp4" />
   </video>
+
+   <div class="speaker-control" id="speakerControl">
+      <i class="fas fa-volume-mute"></i>
+      <span class="tooltip">Click to unmute</span>
+    </div>
 
 </section>
           <!-- End Banner -->
@@ -5457,6 +5464,87 @@ document.getElementById("downloadCreds").addEventListener("click", () => {
       }
     });
   </script>
+
+  <script>
+// Video mute/unmute functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const video = document.getElementById('homeVideo');
+  const speakerControl = document.getElementById('speakerControl');
+  const speakerIcon = speakerControl.querySelector('i');
+  const tooltip = speakerControl.querySelector('.tooltip');
+  
+  // Check if video element exists
+  if (!video) return;
+  
+  // Function to toggle mute
+  function toggleMute() {
+    if (video.muted) {
+      // Unmute the video
+      video.muted = false;
+      speakerIcon.className = 'fas fa-volume-up';
+      speakerControl.classList.add('unmuted');
+      tooltip.textContent = 'Click to mute';
+      
+      // Try to play the video (some browsers require this after unmuting)
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.log("Autoplay prevented:", error);
+        });
+      }
+    } else {
+      // Mute the video
+      video.muted = true;
+      speakerIcon.className = 'fas fa-volume-mute';
+      speakerControl.classList.remove('unmuted');
+      tooltip.textContent = 'Click to unmute';
+    }
+  }
+  
+  // Add click event to speaker control
+  speakerControl.addEventListener('click', toggleMute);
+  
+  // Add keyboard shortcut (M key for mute/unmute)
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'm' || event.key === 'M') {
+      toggleMute();
+    }
+  });
+  
+  // Initialize tooltip based on current state
+  if (video.muted) {
+    tooltip.textContent = 'Click to unmute';
+  } else {
+    tooltip.textContent = 'Click to mute';
+    speakerIcon.className = 'fas fa-volume-up';
+    speakerControl.classList.add('unmuted');
+  }
+  
+  // Handle video errors
+  video.addEventListener('error', function() {
+    console.error('Video loading error:', video.error);
+    speakerControl.style.display = 'none'; // Hide control if video fails
+  });
+  
+  // Store mute preference in localStorage
+  video.addEventListener('volumechange', function() {
+    localStorage.setItem('videoMuted', video.muted);
+  });
+  
+  // Load mute preference from localStorage
+  const savedMuteState = localStorage.getItem('videoMuted');
+  if (savedMuteState !== null) {
+    video.muted = savedMuteState === 'true';
+    
+    // Update UI based on saved state
+    if (!video.muted) {
+      speakerIcon.className = 'fas fa-volume-up';
+      speakerControl.classList.add('unmuted');
+      tooltip.textContent = 'Click to mute';
+    }
+  }
+});
+</script>
 
 
 

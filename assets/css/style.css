@@ -1367,3 +1367,206 @@ q {
 
 /*  */
 
+/* Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.banner-video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Speaker Controls */
+.speaker-control {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.speaker-control:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.speaker-control i {
+  font-size: 22px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.speaker-control.unmuted i {
+  color: #4CAF50; /* Green when unmuted */
+}
+
+/* Tooltip */
+.speaker-control .tooltip {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.speaker-control .tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.8);
+}
+
+.speaker-control:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .speaker-control {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .speaker-control i {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .speaker-control {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .speaker-control i {
+    font-size: 18px;
+  }
+}
+
+/* Speaker Controls */
+.speaker-control {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.speaker-control:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.speaker-control i {
+  font-size: 22px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.speaker-control.unmuted i {
+  color: #4CAF50; /* Green when unmuted */
+}
+
+/* Tooltip */
+.speaker-control .tooltip {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.speaker-control .tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.8);
+}
+
+.speaker-control:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .speaker-control {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .speaker-control i {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .speaker-control {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .speaker-control i {
+    font-size: 18px;
+  }
+}
