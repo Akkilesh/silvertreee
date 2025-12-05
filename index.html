@@ -53,6 +53,302 @@
 
         <link rel="stylesheet" href="./assets/css/style.css">
 
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+          <style>
+
+
+    .video-section {
+      width: 100%;
+      padding: 30px 20px;
+      box-sizing: border-box;
+      max-width: 1400px;
+      margin: 0 auto;
+      height: 90vh;
+
+          display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .section-heading {
+      text-align: center;
+      position: relative;
+    }
+
+    .section-heading h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: white;
+    }
+
+    .section-heading p {
+      font-size: 1.1rem;
+      color: #aaa;
+      max-width: 600px;
+      margin: 15px auto 0;
+      line-height: 1.6;
+    }
+
+    .swiper {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+
+    /* Custom transition for active slide */
+    .swiper-slide-active {
+      transform: scale(1.05);
+      z-index: 2;
+    }
+
+    .swiper-slide-next, .swiper-slide-prev {
+      opacity: 0.85;
+    }
+
+    .video-card {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #1a1a1a;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      border: 1px solid #333;
+    }
+
+    .video-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .video-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .video-info {
+      padding: 20px;
+    }
+
+    .video-info h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.2rem;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    .video-info p {
+      margin: 0;
+      color: #aaa;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .play-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .video-card:hover .play-overlay {
+      opacity: 1;
+    }
+
+    .play-icon {
+      font-size: 4rem;
+      color: rgb(0, 0, 0);
+    }
+
+    /* Custom navigation buttons */
+    .swiper-button-next, .swiper-button-prev {
+      width: 40px;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 50%;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      top: 50%;
+      transform: translateY(-50%);
+      margin-top: 0;
+    }
+
+    .swiper-pagination{
+      display: none !important;
+    }
+
+    .swiper-button-next:after, .swiper-button-prev:after {
+      font-size: 1.5rem;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* .swiper-button-next:hover, .swiper-button-prev:hover {
+      transform: translateY(-50%) scale(1.1);
+    } */
+
+    .swiper-button-prev {
+      left: 10px;
+    }
+
+    .swiper-button-next {
+      right: 10px;
+    }
+
+    /* Pagination */
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      background: #555;
+      opacity: 1;
+      transition: all 0.3s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #ff0000;
+      transform: scale(1.3);
+    }
+
+    /* Popup Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+    }
+
+    .modal-content {
+      width: 90%;
+      max-width: 1000px;
+      background: #000;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      transform: scale(0.9);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .modal-overlay.active .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-content iframe {
+      width: 100%;
+      height: 560px;
+      display: block;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: -50px;
+      right: 0;
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .close-btn:hover {
+      transform: rotate(90deg);
+      color: #ff0000;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .video-section {
+        padding: 50px 20px;
+      }
+      
+      .section-heading h1 {
+        font-size: 2.4rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-heading h1 {
+        font-size: 2rem;
+      }
+      
+      .section-heading p {
+        font-size: 1rem;
+        padding: 0 15px;
+      }
+      
+      .modal-content iframe {
+        height: 400px;
+      }
+      
+      .swiper-button-next, .swiper-button-prev {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .swiper-button-prev {
+        left: 5px;
+      }
+      
+      .swiper-button-next {
+        right: 5px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .video-section {
+        padding: 40px 15px;
+      }
+      
+      .section-heading h1 {
+        font-size: 1.8rem;
+      }
+      
+      .modal-content iframe {
+        height: 250px;
+      }
+    }
+  </style>
+
 
     <title>Silvertreee</title>
     <link rel="icon" href="./assets/images/top-logo.png" type="image/png">
@@ -633,114 +929,92 @@
               <div
                 class="absolute w-full max-w-full bottom-0 pointer-events-none"
               >
-                <div
-                  class="lqd-throwable-scene relative pointer-events-none overflow-hidden"
-                  data-lqd-throwable-scene="true"
-                  data-throwable-options='{"roundness": "7em"}'
-                >
-                  <p
-                    class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-1"
-                    data-lqd-throwable-el
-                  >
-                    <span  style="background-color: #D2F5E3; color: #2c2929;"
-                      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16 text-white"
-                      >Conferences</span
-                    >
-                  </p>
-                  <p
-                    class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-2"
-                    data-lqd-throwable-el
-                  >
-                    <span  style="background-color: #FAD4C0; color: #2c2929;"
-                      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16 text-white"
-                      >Exhibitions</span
-                    >
-                  </p>
-                  <p
-                    class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-3"
-                    data-lqd-throwable-el
-                  >
-                    <span  style="background-color: #F7E7A9; color: #2c2929;"
-                      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16 text-white"
-                      >Awards
-                    </span>
-                  </p>
+          <div
+  class="lqd-throwable-scene relative pointer-events-none overflow-hidden"
+  data-lqd-throwable-scene="true"
+  data-throwable-options='{"roundness": "7em"}'
+>
+  <p class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-1"
+     data-lqd-throwable-el>
+    <span style="background-color: #0081A7; color: #ffffff;"
+      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16">
+      Conferences
+    </span>
+  </p>
 
-                  <p
-                    class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-3"
-                    data-lqd-throwable-el
-                  >
-                    <span  style="background-color: #F8E8D9;color: #2c2929;"
-                      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16 text-white"
-                      >Gala Dinner
-                    </span>
-                  </p>
-                  <p
-                    class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-4"
-                    data-lqd-throwable-el
-                  >
-                    <span  style="background-color: #DDE7F2;color: #2c2929;"
-                      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16 text-white"
-                      >MICE
-                    </span>
-                  </p>
-                  <p
-                    class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-5"
-                    data-lqd-throwable-el
-                  >
-                    <span  style="background-color: #E5D6F5;color: #2c2929;"
-                      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16 text-white"
-                      >Virtual</span
-                    >
-                  </p>
+  <p class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-2"
+     data-lqd-throwable-el>
+    <span style="background-color: #00AFB9; color: #ffffff;"
+      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16">
+      Exhibitions
+    </span>
+  </p>
 
-                  <p
-                    class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-5"
-                    data-lqd-throwable-el
-                  >
-                    <span  style="background-color: #CCF3F9;color: #2c2929;"
-                      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16 text-white"
-                      >Hybrid</span
-                    >
-                  </p>
-                  <p
-                    class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-6"
-                    data-lqd-throwable-el
-                  >
-                    <span  style="background-color: #F5C9D4;color: #2c2929;"
-                      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16 text-white"
-                      >Artist Management
-                    </span>
-                  </p>
-                  <p
-                    class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-7"
-                    data-lqd-throwable-el
-                  >
-                    <span  style="background-color: #E2725B;color: #2c2929;"
-                      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16 text-white"
-                      >Design
-                    </span>
-                  </p>
+  <p class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-3"
+     data-lqd-throwable-el>
+    <span style="background-color: #FDFCDC; color: #2c2929;"
+      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16">
+      Awards
+    </span>
+  </p>
 
-                  <p 
-                    class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-7"
-                    data-lqd-throwable-el
-                  >
-                    <span  style="background-color: #BFD7ED;color: #2c2929;"
-                      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16 text-white"
-                      >Audio visual
-                    </span>
-                  </p>
-                  <p
-                    class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-8"
-                    data-lqd-throwable-el
-                  >
-                    <span  style="background-color: #F9C8B8;color: #2c2929;"
-                      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16 text-white"
-                      >Product Launches
-                    </span>
-                  </p>
-                </div>
+  <p class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-3"
+     data-lqd-throwable-el>
+    <span style="background-color: #FED9B7; color: #2c2929;"
+      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16">
+      Gala Dinner
+    </span>
+  </p>
+
+  <p class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-4"
+     data-lqd-throwable-el>
+    <span style="background-color: #F07167; color: #ffffff;"
+      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16">
+      MICE
+    </span>
+  </p>
+
+  <p class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-5"
+     data-lqd-throwable-el>
+    <span style="background-color: #233D4D; color: #ffffff;"
+      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16">
+      Virtual
+    </span>
+  </p>
+
+  <p class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-5"
+     data-lqd-throwable-el>
+    <span style="background-color: #FE7F2D; color: #2c2929;"
+      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16">
+      Hybrid
+    </span>
+  </p>
+
+  <p class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-6"
+     data-lqd-throwable-el>
+    <span style="background-color: #FCCA46; color: #2c2929;"
+      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16">
+      Artist Management
+    </span>
+  </p>
+
+  <p class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-7"
+     data-lqd-throwable-el>
+    <span style="background-color: #A1C181; color: #2c2929;"
+      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16">
+      Design
+    </span>
+  </p>
+
+  <p class="lqd-throwable-element inline-block absolute top-0 left-0 whitespace-nowrap m-0 pointer-events-auto user-select-none module-float-7"
+     data-lqd-throwable-el>
+    <span style="background-color: #619B8A; color: #ffffff;"
+      class="text-black py-0/25em px-1/5em text-22 leading-1/5em rounded-100 lqd-throwable-element-rot inline-block sm:text-16">
+      Audio Visual
+    </span>
+  </p>
+</div>
+
               </div>
 
               	<div class="container">
@@ -814,8 +1088,8 @@
        
 
             <!-- Start Section Flow with 8 Items -->
-            <section id="our-services" class="lqd-section section-flow bg-white pt-30">
-                 <div class="container-fluid border-lightgray pb-30">
+            <section id="our-services" class="lqd-section section-flow bg-white">
+                 <div class="container-fluid border-lightgray pt-30 pb-30 mob-padding">
                 <div class="container">
                   <div class="row">
                     <div class="col col-12 text-start do-best-heading">
@@ -828,18 +1102,18 @@
                       data-ca-options='{"animationTarget": "h2", "ease": "bounce.in", "direction": "random","duration": 3000, "initValues":{ "opacity": 0 }, "animations":{ "opacity": 1 }}'
                     >
                       <h2
-                        class="text-94 font-medium -tracking-1 mr-0/25em sm:text-60 deliver-formob result text-dark section-heading" 
+                        class="text-94 font-medium -tracking-1 mr-0/25em mb-0 sm:text-60 deliver-formob result text-dark section-heading" 
                       >
                         WHERE
                       </h2>
                       <h2
-                        class="text-94 font-medium -tracking-1 mr-0/25em sm:text-60 deliver-formob we text-dark section-heading"
+                        class="text-94 font-medium -tracking-1 mr-0/25em mb-0 sm:text-60 deliver-formob we text-dark section-heading"
                       >
                         WE
                       </h2>
                   
                       <h2
-                        class="text-94 font-medium font-accent italic -tracking-1 mr-0/25em sm:text-60 deliver-formob text-dark section-heading"
+                        class="text-94 font-medium font-accent italic -tracking-1 mr-0/25em mb-0 sm:text-60 deliver-formob text-dark section-heading"
                       >
                        DOMINATE
                       </h2>
@@ -977,7 +1251,7 @@
                         <!-- CONTENT 1 -->
                         <div class="lqd-section-flow-item flex items-center">
                           <div class="lqd-section-flow-item-inner">
-                            <div class="lqd-section-flow-content-mobile mb-30">
+                            <div class="lqd-section-flow-content-mobile mb-10">
                               <img
                                 src="./assets/images/demo/asymmetric-9/services/showcase_artist_management.webp"
                               />
@@ -1001,10 +1275,10 @@
                           </div>
                         </div>
 
-                        <!-- CONTENT 2 -->
+                        <!-- CONTENT 2 --> 
                         <div class="lqd-section-flow-item flex items-center" style="background-color: white;">
                           <div class="lqd-section-flow-item-inner">
-                            <div class="lqd-section-flow-content-mobile mb-30">
+                            <div class="lqd-section-flow-content-mobile mb-10">
                               <img
                                 src="./assets/images/demo/asymmetric-9/services/showcase_design_av.webp"
                               />
@@ -1030,7 +1304,7 @@
                         <!-- CONTENT 3 -->
                         <div class="lqd-section-flow-item flex items-center">
                           <div class="lqd-section-flow-item-inner">
-                            <div class="lqd-section-flow-content-mobile mb-30">
+                            <div class="lqd-section-flow-content-mobile mb-10">
                               <img
                                 src="./assets/images/demo/asymmetric-9/services/showcase_event.webp"
                               />
@@ -1054,7 +1328,7 @@
                         <!-- CONTENT 4 -->
                         <div class="lqd-section-flow-item flex items-center" style="background-color: white;">
                           <div class="lqd-section-flow-item-inner">
-                            <div class="lqd-section-flow-content-mobile mb-30">
+                            <div class="lqd-section-flow-content-mobile mb-10">
                               <img
                                 src="./assets/images/demo/asymmetric-9/services/showcase_exhibitions.webp"
                               />
@@ -1078,7 +1352,7 @@
                         <!-- CONTENT 5 -->
                         <div class="lqd-section-flow-item flex items-center">
                           <div class="lqd-section-flow-item-inner">
-                            <div class="lqd-section-flow-content-mobile mb-30">
+                            <div class="lqd-section-flow-content-mobile mb-10">
                               <img
                                 src="./assets/images/demo/asymmetric-9/services/showcase_gala.webp"
                               />
@@ -1102,7 +1376,7 @@
                         <!-- CONTENT 6 -->
                         <div class="lqd-section-flow-item flex items-center" style="background-color: white;">
                           <div class="lqd-section-flow-item-inner">
-                            <div class="lqd-section-flow-content-mobile mb-30">
+                            <div class="lqd-section-flow-content-mobile mb-10">
                               <img
                                 src="./assets/images/demo/asymmetric-9/services/showcase_mice.webp"
                               />
@@ -1126,7 +1400,7 @@
                         <!-- CONTENT 7 -->
                         <div class="lqd-section-flow-item flex items-center" >
                           <div class="lqd-section-flow-item-inner">
-                            <div class="lqd-section-flow-content-mobile mb-30">
+                            <div class="lqd-section-flow-content-mobile mb-10">
                               <img
                                 src="./assets/images/demo/asymmetric-9/services/showcase_product_launch.webp"
                               />
@@ -1150,7 +1424,7 @@
                         <!-- CONTENT 8 -->
                         <div class="lqd-section-flow-item flex items-center" style="background-color: white;">
                           <div class="lqd-section-flow-item-inner">
-                            <div class="lqd-section-flow-content-mobile mb-30">
+                            <div class="lqd-section-flow-content-mobile mb-10">
                               <img
                                 src="./assets/images/demo/asymmetric-9/services/showcase_virtual.webp"
                               />
@@ -1179,70 +1453,239 @@
             <!-- End Section Flow -->
 
                      <!-- Start Text Box -->
-               <section class="lqd-section case-studies" id="portfolio-video">
-            <div class="container">
-              <div class="row justify-center">
-                <div style="opacity: 0 !important;" class="col col-12 col-lg-12 text-center mb-35">
-        
-
-                      <div class="ld-fancy-heading relative">
-                    <h6
-                      class="ld-fh-element text-14 font-bold text-white mb-0/5em tracking-0 mb-0/5em inline-block relative"
+           <section class="video-section">
+  <div style="justify-content: center;"
+                      class="flex flex-wrap mb-30"
+                      data-custom-animations="true"
+                      data-ca-options='{"animationTarget": "h2", "ease": "bounce.in", "direction": "random","duration": 3000, "initValues":{ "opacity": 0 }, "animations":{ "opacity": 1 }}'
                     >
-                      Portfolio Video
-                    </h6>
-                  </div>
-
-
-             
-
-                    <div class="slider-container">
-            <div class="slider-item">
-                <img src="https://img.youtube.com/vi/kY9nYriftL0/maxresdefault.jpg" alt="Video Thumbnail" class="video-thumbnail" data-video-id="kY9nYriftL0">
-                <div class="video-info" style="opacity: 0;">
-                    <h3 class="video-title">Never Gonna Give You Up</h3>
-                    <p class="video-description">Rick Astley's classic hit song from 1987</p>
-                </div>
+                      <h2
+                        class="text-94 font-medium -tracking-1 mr-0/25em mb-0 sm:text-60 deliver-formob text-white section-heading" 
+                      >
+                        OUR
+                      </h2>
+                      <h2
+                        class="text-94 font-medium -tracking-1 mr-0/25em mb-0 sm:text-60 deliver-formob text-white section-heading"
+                      >
+                        PORTFOLIO
+                      </h2>
+                  
+                      <h2
+                        class="text-94 font-medium font-accent italic -tracking-1 mr-0/25em mb-0 sm:text-60 deliver-formob text-white section-heading"
+                      >
+                       VIDEOS
+                      </h2>
+                    </div>
+    
+    <div class="swiper">
+      <div class="swiper-wrapper"> 
+        <!-- 9 video thumbnails with actual YouTube video IDs -->
+        <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/CR_NKs-uiRo">
+            <img src="./assets/images/1.jpeg" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
             </div>
-            
-            <div class="slider-controls">
-                <button class="btn btn-primary me-2" id="prev-btn">
-                    Previous
-                </button>
-                <button class="btn btn-primary" id="next-btn">
-                    Next 
-                </button>
-            </div>
-            
-            <div class="slider-dots">
-                <div class="dot active" data-index="0"></div>
-                <div class="dot" data-index="1"></div>
-                <div class="dot" data-index="2"></div>
-                <div class="dot" data-index="3"></div>
-            </div>
+            <!-- <div class="video-info">
+                  <h5>Sika Day 2025</h5>
+     <p>2 days. 1 powerful journey. From targets & training to talent & triumph — Sales Meet and Sika Day at Taj Lands End had it all.</p>           
+     </div> -->
+          </div>
         </div>
         
-        <div class="lightbox" id="lightbox">
-            <div class="lightbox-content">
-                <button class="close-lightbox" id="close-lightbox">
-                    <i class="fas fa-times"></i>
-                </button>
-                <div class="lightbox-video" id="lightbox-video">
-                    <!-- YouTube iframe will be inserted here -->
-                </div>
+        <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/_mEAD4ixej4">
+            <img src="./assets/images/2.jpeg" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
             </div>
+            <!-- <div class="video-info">
+              <h3>P&amp;G Gulf OGSM Dubai 2024</h3>
+                  <p>Unforgettable moments, mesmerizing illusions, and connections that shine!</p>
+            </div> -->
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/06X-eL2A0hQ">
+            <img src="./assets/images/3.jpeg" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+            <!-- <div class="video-info">
+                  <h5>RC Kick Off 2025</h5>
+                  <p>Aamby Valley played host to our dynamic sales conference, fueling our mission to nourish pets worldwide!</p>
+            </div> -->
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/SzfFLE3w6SM">
+            <img src="./assets/images/4.jpeg" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+            <!-- <div class="video-info">
+     <h5>Mars MTD 2025</h5>
+                  <p>Making a mark, making a difference, partnering for innovation! Talented teams pitched game-changing ideas.</p>   
+                         </div> -->
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/fMhrwujbixM">
+            <img src="./assets/images/1.jpeg" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+            <!-- <div class="video-info">
+                  <h5>Pidilite PLUB Hero Awards</h5>
+                  <p>Sun, Sand, and the Blue Sea! Pidilite’s Large User Business held their first ever HERO AWARDS in Goa.</p>
+            </div> -->
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/2CdJkPC-bLg">
+            <img src="./assets/images/2.jpeg" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+            <!-- <div class="video-info">
+                  <h5>PPGAP Refinish 2024</h5>
+                  <p>An event to remember in the Heart of Kochi! PPG Asian Paints Refinish Conference 2024!</p>
+            </div> -->
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/FhL_XjU94Tg">
+            <img src="./assets/images/3.jpeg" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+            <!-- <div class="video-info">
+                  <h5>Pantaloons 2023</h5>
+                  <p>Fashion never sleeps in Delhi! An amazing conference filled with enthusiasm, fun and fashion.</p>
+            </div> -->
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/0M1zPbZ3Lec">
+            <img src="./assets/images/3.jpeg" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+            <!-- <div class="video-info">
+                  <h5>Colgate YCMAD 2024</h5>
+                  <p>Celebrating Excellence in Black & Gold, with a spectacular Great Gatsby themed event.</p>
+            </div> -->
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/Pu2HOd19OOM">
+            <img src="./assets/images/4.jpeg" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+            <!-- <div class="video-info">
+                  <h5>Glenmark Asia Awards</h5>
+                  <p>The 2-day Fiesta held for the Star Awardees of Glenmark in Thailand.</p>
+            </div> -->
+          </div>
+        </div>
+
+         <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/KqLwBvvG664">
+            <img src="./assets/images/1.jpeg" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+            <!-- <div class="video-info">
+                  <h5>Cello Multi City Launch</h5>
+                  <p>Multiple city product launches that brought excitement to markets nationwide.</p>
+            </div> -->
+          </div>
+        </div>
+
+          <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/_mEAD4ixej4">
+            <img src="./assets/images/2.jpeg" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+            <!-- <div class="video-info">
+              <h3>Shake It Off</h3>
+              <p>Taylor Swift's catchy pop anthem</p>
+            </div> -->
+          </div>
+        </div>
+
+             <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/M0UjBRXt58s">
+            <img src="./assets/images/3.jpeg" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+            <!-- <div class="video-info">
+                  <h5>Colgate BOD Farewell</h5>
+                  <p>A celebratory tribute honoring Colgate Palmolive’s departing leaders.</p>
+            </div> -->
+          </div>
+        </div>
+
+                     <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/_mEAD4ixej4">
+            <img src="./assets/images/4.jpeg" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+            <!-- <div class="video-info">
+                  <h5>P&amp;G Gulf OGSM Dubai 2024</h5>
+                  <p>Unforgettable moments, mesmerizing illusions, and connections that shine!</p>
+            </div> -->
+          </div>
+        </div>
+
+                            <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/y_zE4mKHNRU">
+            <img src="./assets/images/1.jpeg" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+            <!-- <div class="video-info">
+                  <h5>PPGAP Marine 2024</h5>
+                  <p>A spectacular marine event showcasing innovation and excellence.</p>
+            </div> -->
+          </div>
         </div>
 
 
-                </div>
-              </div>
-            </div>
-              </section>
+
+
+      </div>
+
+      <!-- Pagination + Navigation -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </section>
+
+  <!-- Popup Modal -->
+  <div class="modal-overlay" id="videoModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">×</span>
+      <iframe id="videoFrame" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
              <!-- End Text Box -->
 
             <!-- Start Case Studies -->
             <section
-              class="lqd-section case-studies bg-white pb-30 pt-30"
+              class="lqd-section case-studies bg-white pb-30"
               id="our-work"
             >
             
@@ -1274,7 +1717,7 @@
                       </h2>
                     </div>
 
-                    <div class="lqd-pf-grid mt-30" >
+                    <div class="lqd-pf-grid" >
                    
 
                       <div
@@ -3424,7 +3867,7 @@
                         </div>
                       </div>
 
-                      <div
+                      <!-- <div
                         class="col col-xl-4 col-md-6 col-12 carousel-item flex flex-col justify-center has-one-child px-10"
                       >
                         <div class="carousel-item-inner relative w-full">
@@ -3445,7 +3888,7 @@
                                       class="rounded-full"
                                       width="800"
                                       height="800"
-                                      src="./assets/images/demo/asymmetric-9/team/9.webp"
+                                      src="./assets/images/demo/asymmetric-9/team/jatin.jpg"
                                       alt="services"
                                     />
                                   </figure>
@@ -3476,7 +3919,7 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
 
                       <div
                         class="col col-xl-4 col-md-6 col-12 carousel-item flex flex-col justify-center has-one-child px-10"
@@ -3531,7 +3974,7 @@
                         </div>
                       </div>
 
-                      <div
+                      <!-- <div
                         class="col col-xl-4 col-md-6 col-12 carousel-item flex flex-col justify-center has-one-child px-10"
                       >
                         <div class="carousel-item-inner relative w-full">
@@ -3541,11 +3984,7 @@
                             >
                           
                               <div class="ld-fancy-heading relative">
-                                <!-- <p
-                                  class="ld-fh-element relative text-15 mb-1em"
-                                >
-                                 Client Services Executive
-                                </p> -->
+                           
                               </div>
                               <div
                                 class="w-230 lqd-imggrp-single block relative"
@@ -3558,7 +3997,7 @@
                                       class="rounded-full"
                                       width="800"
                                       height="800"
-                                      src="./assets/images/demo/asymmetric-9/team/11.webp"
+                                      src="./assets/images/demo/asymmetric-9/team/sup.jpg"
                                       alt="services"
                                     />
                                   </figure>
@@ -3589,7 +4028,7 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
 
                       <div
                         class="col col-xl-4 col-md-6 col-12 carousel-item flex flex-col justify-center has-one-child px-10"
@@ -3614,7 +4053,7 @@
                                       class="rounded-full"
                                       width="800"
                                       height="800"
-                                      src="./assets/images/demo/asymmetric-9/team/12.webp"
+                                      src="./assets/images/demo/asymmetric-9/team/12.png"
                                       alt="services"
                                     />
                                   </figure>
@@ -3651,7 +4090,7 @@
                         </div>
                       </div>
 
-                         <div
+                         <!-- <div
                         class="col col-xl-4 col-md-6 col-12 carousel-item flex flex-col justify-center has-one-child px-10"
                       >
                         <div class="carousel-item-inner relative w-full">
@@ -3661,11 +4100,7 @@
                             >
                             
                               <div class="ld-fancy-heading relative">
-                                <!-- <p
-                                  class="ld-fh-element relative text-15 mb-1em"
-                                >
-                                 Graphic Designer
-                                </p> -->
+                          
                               </div>
                               <div
                                 class="w-230 lqd-imggrp-single block relative"
@@ -3678,7 +4113,7 @@
                                       class="rounded-full"
                                       width="800"
                                       height="800"
-                                      src="./assets/images/demo/asymmetric-9/team/10.webp"
+                                      src="./assets/images/demo/asymmetric-9/team/Shirish.png"
                                       alt="services"
                                     />
                                   </figure>
@@ -3713,7 +4148,7 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>
@@ -4207,31 +4642,8 @@
                   </a>
                 </div>
               </div>
-              <div
-                class="w-60percent relative flex flex-col pl-200 sm:w-full lg:p-0"
-              >
-                <div class="absolute max-w-full top-0 ltr-right-0">
-                  <div class="lqd-imggrp-single block relative">
-                    <div
-                      class="lqd-imggrp-img-container inline-flex relative items-center justify-center"
-                    >
-                      <figure class="w-full relative">
-                        <img
-                          width="48"
-                          height="48"
-                          src="./assets/images/demo/asymmetric-9/shape/arrow-2.svg"
-                          alt="shape arrow"
-                        />
-                      </figure>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="max-w-full relative flex flex-grow-1">
-                <div class="divider w-full mt-50 py-15">
-                  <span class="divider-separator w-full"></span>
-                </div>
-              </div>
+      
+        
             </div>
           </div>
         </section>
@@ -4925,199 +5337,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<!--  -->
-    <script>
-        // Video data - you can replace these with your actual video URLs
-       const videos = [
-    {
-        id: 'kY9nYriftL0',
-        title: 'Pidilite Tenax dealer Trip 2025',
-        description: 'A power-packed 3-day celebration with Pidilite Tenax in vibrant Goa — from seamless travel to stunning launches and unforgettable moments. Grateful for the trust and partnership in creating experiences that truly mattered!',
-        thumbnail: 'https://img.youtube.com/vi/kY9nYriftL0/maxresdefault.jpg'
-    },
-    {
-        id: 'CR_NKs-uiRo',
-        title: 'Sika day 2025',
-        description: '2 days. 1 powerful journey. From targets & training to talent & triumph — Sales Meet and Sika Day at Taj Lands End had it all. Proud to have curated this unforgettable celebration of strategy, spirit & success!',
-        thumbnail: 'https://img.youtube.com/vi/CR_NKs-uiRo/maxresdefault.jpg'
-    },
-    {
-        id: '06X-eL2A0hQ',
-        title: 'Royal Canin Kick off 2025',
-        description: 'Where passion meets purpose! Aamby Valley played host to our dynamic sales conference, Kick Off 2025, fueling our mission to nourish pets worldwide!',
-        thumbnail: 'https://img.youtube.com/vi/06X-eL2A0hQ/maxresdefault.jpg'
-    },
-    {
-        id: 'xR96S_8ebu0',
-        title: 'Royal Canin Kick off 2023',
-        description: 'A spectacular Royal Canin Kick-Off Meet 2023 in Lonavala — from vibrant cultural vibes to impactful sessions and spirited team-building! Three days of connection, collaboration, and celebration that set the tone for the year ahead.',
-        thumbnail: 'https://img.youtube.com/vi/xR96S_8ebu0/maxresdefault.jpg'
-    },
-    {
-        id: 'SzfFLE3w6SM',
-        title: 'Mars MTD 2025',
-        description: 'Making a mark, making a difference, partnering for innovation! We\'re proud to have hosted Mars MTD, where talented teams pitched game-changing ideas, showcasing creative solutions that will shape the future!',
-        thumbnail: 'https://img.youtube.com/vi/SzfFLE3w6SM/maxresdefault.jpg'
-    },
-    {
-        id: 'fMhrwujbixM',
-        title: 'Pidilite PLUB Hero Awards',
-        description: 'Sun, Sand, and the Blue Sea! Pidilite\'s Large User Business held their first ever HERO AWARDS in Goa! Here is a glimpse of the 3-day event!',
-        thumbnail: 'https://img.youtube.com/vi/fMhrwujbixM/maxresdefault.jpg'
-    },
-    {
-        id: '2CdJkPC-bLg',
-        title: 'PPGAP Refinish 2024',
-        description: 'An event to remember in the Heart of Kochi! PPG AsianPaints Refinish Conference 2024!',
-        thumbnail: 'https://img.youtube.com/vi/2CdJkPC-bLg/maxresdefault.jpg'
-    },
-    {
-        id: '_xWIGeAS81c',
-        title: 'PPGAP Refinish 2023',
-        description: 'PPG Asian Paints Refinish Conference 2023 lit up Fairmont Jaipur with a grand cultural evening and an inspiring day of sessions. It all wrapped up with beats and bonding — a perfect blend of tradition, vision, and celebration',
-        thumbnail: 'https://img.youtube.com/vi/_xWIGeAS81c/maxresdefault.jpg'
-    },
-    {
-        id: 'FhL_XjU94Tg',
-        title: 'Pantaloons EUPHORIA 2023',
-        description: 'Fashion Never sleeps in Delhi! An amazing conference filled with enthusiasm fun and fashion held for Pantaloons Udaan',
-        thumbnail: 'https://img.youtube.com/vi/FhL_XjU94Tg/maxresdefault.jpg'
-    },
-    {
-        id: '0M1zPbZ3Lec',
-        title: 'Colgate YCMAD 2024',
-        description: 'Celebrating Excellence in Black & Gold, The Colgate YCMAD Awards was a spectacle to be witnessed! The Great Gatsby theme took the look and feel to a new level.',
-        thumbnail: 'https://img.youtube.com/vi/0M1zPbZ3Lec/maxresdefault.jpg'
-    },
-    {
-        id: 'Pu2HOd19OOM',
-        title: 'Glenmark Asia Awards Thailand',
-        description: 'The 2 day Fiesta held for the Star Awardees of Glenmark in Thailand.',
-        thumbnail: 'https://img.youtube.com/vi/Pu2HOd19OOM/maxresdefault.jpg'
-    },
-    {
-        id: 'KqLwBvvG664',
-        title: 'Cello Multi City Launch',
-        description: 'Cello Butterflow made a bold mark across Mumbai, Delhi, Kolkata, Chennai, and Daman with its dynamic multi-city launch! A seamless celebration of innovation, creativity, and connection — writing success stories across India.',
-        thumbnail: 'https://img.youtube.com/vi/KqLwBvvG664/maxresdefault.jpg'
-    },
-    {
-        id: 'M0UjBRXt58s',
-        title: 'Colgate BOD Farewell',
-        description: 'Honoring the remarkable legacy of Colgate Palmolive\'s departing leaders! We\'re delighted to have curated a celebratory tribute to recognize their invaluable contributions. Wishing you continued success and happiness in your future endeavors!',
-        thumbnail: 'https://img.youtube.com/vi/M0UjBRXt58s/maxresdefault.jpg'
-    },
-    {
-        id: '_mEAD4ixej4',
-        title: 'P&G Gulf OGSM Dubai 2024',
-        description: 'Unforgettable moments, mesmerizing illusions, and connections that shine! P&G Gulf\'s OGSM in Dubai was a night to remember and a day that dazzled',
-        thumbnail: 'https://img.youtube.com/vi/_mEAD4ixej4/maxresdefault.jpg'
-    }
-];
-        
-        // DOM Elements
-        const sliderItem = document.querySelector('.slider-item');
-        const videoThumbnail = document.querySelector('.video-thumbnail');
-        const videoTitle = document.querySelector('.video-title');
-        const videoDescription = document.querySelector('.video-description');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const dots = document.querySelectorAll('.dot');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxVideo = document.getElementById('lightbox-video');
-        const closeLightbox = document.getElementById('close-lightbox');
-        
-        let currentIndex = 0;
-        
-        // Initialize the slider with the first video
-        function updateSlider(index) {
-            const video = videos[index];
-            
-            // Update thumbnail
-            videoThumbnail.src = video.thumbnail;
-            videoThumbnail.alt = video.title;
-            videoThumbnail.setAttribute('data-video-id', video.id);
-            
-            // Update video info
-            videoTitle.textContent = video.title;
-            videoDescription.textContent = video.description;
-            
-            // Update active dot
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-            
-            currentIndex = index;
-        }
-        
-        // Navigation functions
-        function goToPrev() {
-            let newIndex = currentIndex - 1;
-            if (newIndex < 0) {
-                newIndex = videos.length - 1;
-            }
-            updateSlider(newIndex);
-        }
-        
-        function goToNext() {
-            let newIndex = currentIndex + 1;
-            if (newIndex >= videos.length) {
-                newIndex = 0;
-            }
-            updateSlider(newIndex);
-        }
-        
-        // Open lightbox with the current video
-        function openLightbox() {
-            const videoId = videos[currentIndex].id;
-            lightboxVideo.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-            lightbox.style.display = 'flex';
-        }
-        
-        // Close lightbox
-        function closeLightboxFunc() {
-            lightbox.style.display = 'none';
-            lightboxVideo.innerHTML = '';
-        }
-        
-        // Event listeners
-        prevBtn.addEventListener('click', goToPrev);
-        nextBtn.addEventListener('click', goToNext);
-        
-        videoThumbnail.addEventListener('click', openLightbox);
-        closeLightbox.addEventListener('click', closeLightboxFunc);
-        
-        // Close lightbox when clicking outside the video
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                closeLightboxFunc();
-            }
-        });
-        
-        // Dot navigation
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                const index = parseInt(dot.getAttribute('data-index'));
-                updateSlider(index);
-            });
-        });
-        
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (lightbox.style.display === 'flex') {
-                if (e.key === 'Escape') {
-                    closeLightboxFunc();
-                }
-            } else {
-                if (e.key === 'ArrowLeft') {
-                    goToPrev();
-                } else if (e.key === 'ArrowRight') {
-                    goToNext();
-                }
-            }
-        });
-    </script>
-
     
 <script>
 document.getElementById("downloadCreds").addEventListener("click", () => {
@@ -5127,6 +5346,118 @@ document.getElementById("downloadCreds").addEventListener("click", () => {
     link.click();
 });
 </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  
+  <script>
+    // Enhanced Swiper Setup with smooth transitions
+    var swiper = new Swiper('.swiper', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      speed: 800, // Increased for smoother transition
+      grabCursor: true,
+      loop: true,
+      effect: 'slide', // Using slide effect for smoothness
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        0: { 
+          slidesPerView: 1,
+          spaceBetween: 20
+        },
+        768: { 
+          slidesPerView: 2,
+          spaceBetween: 25
+        },
+        1024: { 
+          slidesPerView: 3,
+          spaceBetween: 30
+        }
+      },
+      // Enable smooth transitions
+      on: {
+        init: function () {
+          // Add transition classes after initialization
+          setTimeout(() => {
+            document.querySelectorAll('.swiper-slide').forEach(slide => {
+              slide.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease';
+            });
+          }, 100);
+        },
+        slideChangeTransitionStart: function () {
+          // Add active class for smooth transition
+          document.querySelectorAll('.swiper-slide').forEach(slide => {
+            slide.classList.remove('swiper-slide-active', 'swiper-slide-next', 'swiper-slide-prev');
+          });
+        },
+        slideChangeTransitionEnd: function () {
+          // Update classes after transition ends
+          const activeSlide = this.slides[this.activeIndex];
+          if (activeSlide) activeSlide.classList.add('swiper-slide-active');
+          
+          const nextSlide = this.slides[this.activeIndex + 1];
+          if (nextSlide) nextSlide.classList.add('swiper-slide-next');
+          
+          const prevSlide = this.slides[this.activeIndex - 1];
+          if (prevSlide) prevSlide.classList.add('swiper-slide-prev');
+        }
+      }
+    });
+
+    // Modal Logic with smooth transitions
+    const cards = document.querySelectorAll('.video-card');
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoFrame');
+    const closeBtn = document.getElementById('closeModal');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const videoURL = card.getAttribute('data-video');
+        iframe.src = videoURL + '?autoplay=1&rel=0';
+        modal.style.display = 'flex';
+        // Trigger animation
+        setTimeout(() => {
+          modal.classList.add('active');
+        }, 10);
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+      // Wait for transition to finish before hiding
+      setTimeout(() => {
+        modal.style.display = 'none';
+        iframe.src = '';
+      }, 300);
+    });
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        setTimeout(() => {
+          modal.style.display = 'none';
+          iframe.src = '';
+        }, 300);
+      }
+    });
+
+    // Keyboard support
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.style.display === 'flex') {
+        closeBtn.click();
+      }
+    });
+  </script>
+
 
 
 
