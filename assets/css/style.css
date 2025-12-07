@@ -1298,6 +1298,10 @@ q {
   color: #444 !important;
 }
 
+.no-padding{
+  padding: 0rem !important;
+}
+
 @media (max-width: 768px) {
   #banner {
     height: 70vh; /* mobile friendly height */

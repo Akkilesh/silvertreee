@@ -45,6 +45,23 @@
 <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.css">
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  // Initialize EmailJS with v4+ syntax
+  document.addEventListener('DOMContentLoaded', function() {
+    emailjs.init({
+      publicKey: "OUqEl4GyQtu7PPwJT", // Use publicKey instead of just init
+      blockHeadless: true,
+      limitRate: {
+        id: 'magic-form',
+        throttle: 10000
+      }
+    });
+  });
+</script>
+
+
 
 
     <style>
@@ -355,6 +372,34 @@
     <title>Silvertreee</title>
     <link rel="icon" href="./assets/images/top-logo.png" type="image/png">
   </head>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('magic-form');
+  
+  if (form) {
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+      
+      console.log('Form submitted, sending via EmailJS...');
+      
+      // Send form using EmailJS v4+
+      emailjs.sendForm('service_dojvmrb', 'template_qt5e4vt', this)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          alert("Thank you! Your message has been sent.");
+          form.reset(); // Reset form
+        }, function(error) {
+          console.log('FAILED...', error);
+          alert("Oops! Something went wrong. Please try again.");
+        });
+    });
+  } else {
+    console.error('Form with ID "magic-form" not found!');
+  }
+});
+</script>
+
 
   <body
     class="lqd-cc-outer-hidden"
@@ -4414,7 +4459,7 @@
   height="500"
   style="border:0"
   loading="lazy"
-  allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.297322574275!2d72.85203697497965!3d19.161408082060856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7b258f3c0c1%3A0x452ef6f6732d80b8!2sShanta%20Industrial%20Estate%2C%20203%2C%20IB%20Patel%20Rd%2C%20Goregaon%20West%2C%20Mumbai%2C%20Maharashtra%20400063!5e1!3m2!1sen!2sin!4v1764302487761!5m2!1sen!2sin" style="border:0;"  referrerpolicy="no-referrer-when-downgrade"></iframe>
+  allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.303905369739!2d72.82922567497963!3d19.161105082061006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b7006e48ce35%3A0x5235e1c0e760b41!2sShri%20Sai%20Corporate%20Park!5e1!3m2!1sen!2sin!4v1765096488398!5m2!1sen!2sin"></iframe>
 
               <!-- <iframe 
  
@@ -4442,7 +4487,8 @@
                   </div>
                   <div class="contact-details">
                     <span class="method-label">Address</span>
-                    <p>Shanta Industrial Estate, IB Patel Rd, Sonawala Industry Estate, Goregaon, Mumbai, Maharashtra 400063</p>
+                    <p>204 , Shri Sai Corporate Park, Plot No.B/8, Mahakali Mandir, Road, New Link Rd, opp. Laxmi Nagar, Laxmi Nagar, Goregaon West, Mumbai, Maharashtra 400104
+</p>
                   </div>
                 </div>
 
@@ -4654,17 +4700,17 @@
             </div>
           </div>
         </section>
-        <section class="lqd-section module-menu pt-45">
+        <section class="lqd-section module-menu pt-30">
           <div class="container">
             <div class="row">
               <div
-                class="w-30percent flex flex-auto flex-col mb-20 lg:w-33percent sm:w-50percent"
+                class="w-30percent flex flex-auto flex-col lg:w-33percent sm:w-50percent"
               >
                 <div class="ld-fancy-heading relative">
                   <h3
-                    class="ld-fh-element inline-block relative text-10 uppercase tracking-2 mb-3em text-white-30"
+                    class="ld-fh-element inline-block relative text-15 uppercase tracking-2 mb-10 text-white-30"
                   >
-                    Company
+                    Important Links
                   </h3>
                 </div>
                 <div
@@ -4676,7 +4722,7 @@
                         <span
                           class="link-icon inline-flex hide-if-empty left-icon icon-next-to-label"
                         ></span>
-                        Contact Us
+                        About Us
                       </a>
                     </li>
                     <li class="mb-20">
@@ -4684,8 +4730,7 @@
                         <span
                           class="link-icon inline-flex hide-if-empty left-icon icon-next-to-label"
                         ></span>
-                        FAQ
-                        <span class="link-badge">SOON</span>
+                        Our Services
                       </a>
                     </li>
                     <li class="mb-20">
@@ -4693,7 +4738,7 @@
                         <span
                           class="link-icon inline-flex hide-if-empty left-icon icon-next-to-label"
                         ></span>
-                        Report A Bug
+                        Portfolio Videos
                       </a>
                     </li>
                     <li class="mb-20">
@@ -4701,15 +4746,33 @@
                         <span
                           class="link-icon inline-flex hide-if-empty left-icon icon-next-to-label"
                         ></span>
-                        Careers
+                        Our Work
                       </a>
                     </li>
-                    <li>
+                    <li class="mb-20">
                       <a class="text-white-70" href="#about">
                         <span
                           class="link-icon inline-flex hide-if-empty left-icon icon-next-to-label"
                         ></span>
-                        About Us
+                        Testimonials
+                      </a>
+                    </li>
+
+                    <li class="mb-20">
+                      <a class="text-white-70" href="#about">
+                        <span
+                          class="link-icon inline-flex hide-if-empty left-icon icon-next-to-label"
+                        ></span>
+                        Clientele
+                      </a>
+                    </li>
+
+                    <li class="mb-20">
+                      <a class="text-white-70" href="#about">
+                        <span
+                          class="link-icon inline-flex hide-if-empty left-icon icon-next-to-label"
+                        ></span>
+                        Team
                       </a>
                     </li>
                   </ul>
@@ -4720,7 +4783,7 @@
               >
                 <div class="ld-fancy-heading relative">
                   <h3
-                    class="ld-fh-element inline-block relative text-10 uppercase tracking-2 mb-3em text-white-30"
+                    class="ld-fh-element inline-block relative text-15 uppercase tracking-2 mb-10 text-white-30"
                   >
                     Products
                   </h3>
@@ -4769,7 +4832,7 @@
               >
                 <div class="ld-fancy-heading relative">
                   <h3
-                    class="ld-fh-element inline-block relative text-10 uppercase tracking-2 mb-3em text-white-30"
+                    class="ld-fh-element inline-block relative text-15 uppercase tracking-2 mb-10 text-white-30"
                   >
                     Need help?
                   </h3>
@@ -4798,17 +4861,17 @@
                 <div class="ld-fancy-heading relative">
                   <h5 class="ld-fh-element mb-0/5em inline-block relative">
                     <span class="text-white text-18 font-semibold"
-                      >help@hub.com</span
+                      >help@silvertree.com</span
                     >
                   </h5>
                 </div>
               </div>
               <div
-                class="w-30percent flex flex-auto flex-col mb-20 lg:w-full module-col"
+                class="w-30percent flex flex-auto flex-col mb-20 lg:w-full "
               >
                 <div class="ld-fancy-heading relative">
                   <h3
-                    class="ld-fh-element inline-block relative text-10 uppercase tracking-2 mb-3em text-white-30"
+                    class="ld-fh-element inline-block relative text-15 uppercase tracking-2 mb-3em text-white-30"
                   >
                     KEEP IN TOUCH
                   </h3>
@@ -4847,7 +4910,7 @@
             </div>
           </div>
         </section>
-        <section class="lqd-section module-info pt-30 pb-30">
+        <section class="lqd-section module-info pb-15">
           <div class="container">
             <div class="row items-center">
               <div class="col-12 col-md-4 module-col">
@@ -4878,42 +4941,61 @@
                 </div>
               </div>
               <div class="col col-12 col-md-4 text-end sm:text-start">
-                <div class="social-icons-wrapper gap-50">
+  <div class="social-icons-wrapper gap-25">
+  <!-- Instagram -->
+  <a
+    class="icon social-icon social-icon-instagram"
+    href="https://www.instagram.com"
+    target="_blank"
+  >
+    <span class="sr-only">Instagram</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 448 512"
+    >
+      <path
+        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+        fill="#FFFFFFA1"
+      />
+    </svg>
+  </a>
+  
+  <!-- LinkedIn -->
+  <a
+    class="icon social-icon social-icon-linkedin"
+    href="https://www.linkedin.com"
+    target="_blank"
+  >
+    <span class="sr-only">LinkedIn</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 448 512"
+    >
+      <path
+        d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+        fill="#FFFFFFA1"
+      />
+    </svg>
+  </a>
 
-                  <a
-                    class="icon social-icon social-icon-facebook"
-                    href="https://www.facebook.com"
-                    target="_blank"
-                  >
-                    <span class="sr-only">Facebook</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                    >
-                      <path
-                        d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
-                        fill="#FFFFFFA1"
-                      />
-                    </svg>
-                  </a>
-                  <a
-                    class="icon social-icon social-icon-twitter"
-                    href="https://www.twitter.com"
-                    target="_blank"
-                  >
-                    <span class="sr-only">Twitter</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                    >
-                      <path
-                        d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-                        fill="#FFFFFFA1"
-                      />
-                    </svg>
-                  </a>
-                 
-                </div>
+  <!-- X (Twitter) -->
+  <a
+    class="icon social-icon social-icon-x"
+    href="https://www.twitter.com"
+    target="_blank"
+  >
+    <span class="sr-only">X (Twitter)</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+    >
+      <path
+        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+        fill="#FFFFFFA1"
+      />
+    </svg>
+  </a>
+</div>
               </div>
             </div>
           </div>
@@ -4987,13 +5069,13 @@
                   <div class="screen-reader-response">
                     <p role="status" aria-live="polite" aria-atomic="true"></p>
                   </div>
-                  <form
-                    action="./assets/php/mailer.php"
-                    method="post"
-                    class="lqd-cf-form"
-                    novalidate="novalidate"
-                    data-status="init"
-                  >
+              <form id="magic-form"
+  action="javascript:void(0);" 
+  method="post"
+  class="lqd-cf-form"
+  novalidate="novalidate"
+  data-status="init"
+>
                     <div class="row -mr-15 -ml-15">
                       <div class="col col-md-6 col-12 px-15">
                         <p>
