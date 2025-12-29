@@ -12588,6 +12588,8 @@ style + .ld-module-sd > .ld-module-dropdown:last-child {
 .iconbox-lozenge .iconbox-icon-container {
   border-radius: 15px;
   transform: rotate(45deg);
+
+  
 }
 .iconbox-lozenge .iconbox-icon-container i,
 .iconbox-lozenge .iconbox-icon-container img[src$=".svg"],
