@@ -10791,7 +10791,7 @@ style + .ld-module-sd > .ld-module-dropdown:last-child {
 }
 @media screen and (max-width: 479px) {
   .lqd-fb[class*="h-pt-"] {
-    padding-top: 100%;
+    padding-top:auto;
   }
 }
 .lqd-fb-img img.h-100 {
