@@ -261,6 +261,7 @@ body {
     transform: none !important;
   }
 
+
   /* Force animation classes on mobile */
   [data-custom-animations] {
     visibility: visible !important;
@@ -294,6 +295,11 @@ body {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  
+  .banner-video-bg{
+    object-fit: contain !important;
   }
 
   .lqd-section-flow-item.animate-in {
