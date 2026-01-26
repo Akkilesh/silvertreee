@@ -149,9 +149,9 @@ input[type="submit"],
 		font-size: 17px;
 	}
 
-	.main-header .module-header {
+	/* .main-header .module-header {
 		padding: 20px 20px 0;
-	}
+	} */
 
 	.main-header .ld-module-sd .module-social {
 		bottom: 30px;
