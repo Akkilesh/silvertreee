@@ -302,6 +302,10 @@ body {
     object-fit: contain !important;
   }
 
+  .col-lg-7.order-lg-1.order-2{
+    width: 100%;
+  }
+
   .lqd-section-flow-item.animate-in {
     opacity: 1;
     transform: translateY(0);
