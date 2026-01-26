@@ -1740,3 +1740,7 @@ footer {
     padding: 30px 0rem;
     padding-bottom: 0px;
 }
+
+.module-col-inner{
+  justify-content: flex-start;
+}
