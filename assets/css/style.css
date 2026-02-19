@@ -33,7 +33,7 @@ body {
 }
 
 .text-10.font-bold.uppercase {
-  font-size: 2rem !important;
+  font-size: 1.75rem !important;
 }
 
 /* Pulse Animation */
@@ -69,8 +69,6 @@ body {
 .lqd-promo-content h2 {
   font-size: 6rem !important;
 }
-
-
 
 .text-10.font-bold.uppercase {
   color: rgb(255, 255, 255) !important;
@@ -749,11 +747,11 @@ body {
 } */
 
 .lqd-text-reveal-el {
-    font-size: 1.7rem !important;
-    line-height: 2rem;
-    word-spacing: 0.25rem;
-    font-family: "Roboto-Regular";
-    letter-spacing: 0mm;
+  font-size: 1.7rem !important;
+  line-height: 2rem;
+  word-spacing: 0.25rem;
+  font-family: "Roboto-Regular";
+  letter-spacing: 0mm;
 }
 
 .do-best {
@@ -1339,13 +1337,9 @@ q {
 }
 
 #contactMe {
-  color: black;
-  border: 2px solid black !important;
-  padding: 0.5rem;
-  border-radius: 1rem;
+  padding: 0.75rem 1rem;
   background: #ffffff;
   color: #000000;
-  border: 3px solid silver;
   margin-left: 0.5rem;
 }
 
