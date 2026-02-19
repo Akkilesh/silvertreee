@@ -749,11 +749,11 @@ body {
 } */
 
 .lqd-text-reveal-el {
-  font-size: 2rem !important;
-  line-height: 2.2rem;
-  word-spacing: 0.25rem;
-  font-family: "Roboto-Regular";
-  letter-spacing: 0.2mm;
+    font-size: 1.7rem !important;
+    line-height: 2rem;
+    word-spacing: 0.25rem;
+    font-family: "Roboto-Regular";
+    letter-spacing: 0mm;
 }
 
 .do-best {
