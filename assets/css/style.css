@@ -1747,3 +1747,20 @@ footer {
   padding: 0.5rem 0.75rem;
   border-radius: 1rem;
 }
+
+
+.lqd-pf-column {
+  display: flex;
+}
+
+.lqd-pf-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.lqd-pf-item-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
