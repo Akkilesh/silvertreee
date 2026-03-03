@@ -140,6 +140,12 @@ input[type="submit"],
 	}
 }
 
+@media (max-width: 800px) {
+	.main-header .module-logo {
+		padding: 10px 0;
+	}
+}
+
 @media (max-width: 767px) {
 	.main-header .ld-module-sd .main-nav {
 		--lqd-menu-items-bottom-padding: 25px;

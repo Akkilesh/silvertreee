@@ -312,11 +312,10 @@ body.modal-open {
 
     .video-section {
       width: 100%;
-      padding: 30px 20px;
+      padding: 50px 0px;
       box-sizing: border-box;
       max-width: 1400px;
       margin: 0 auto;
-      height: 80vh;
           display: flex;
     flex-direction: column;
     justify-content: center;
@@ -484,7 +483,7 @@ body.modal-open {
     /* Popup Modal */
     .modal-overlay {
       position: fixed;
-      top: 0;
+      top: 37%;
       left: 0;
       width: 100%;
       height: 230px;
@@ -524,7 +523,7 @@ body.modal-open {
 
     .close-btn {
       position: absolute;
-      top: -50px;
+      top: 1%;
       right: 0;
       font-size: 40px;
       color: #fff;
@@ -692,7 +691,7 @@ document.addEventListener('DOMContentLoaded', function() {
             class="flex items-center justify-between rounded-4 shadow-black-15 px-25 m-0"
           >
             <div class="w-30percent flex items-center p-0 sm:w-50percent">
-              <div class="module-logo flex navbar-brand-plain py-15">
+              <div class="module-logo flex navbar-brand-plain py-10">
                 <a class="navbar-brand flex p-0 relative" href="#" rel="home">
                   <span class="navbar-brand-inner post-rel">
                     <img loading="lazy"
@@ -941,7 +940,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           </div>
         </div>
-        <div
+        <div style="display: none;"
           class="lqd-stickybar-wrap lqd-stickybar-left flex-col items-center justify-between"
         >
           <div class="flex items-center">
@@ -1159,7 +1158,7 @@ document.addEventListener('DOMContentLoaded', function() {
           >
 
                <!-- Start Our Vision -->
-            <section class="lqd-section our-vision pt-80 min-h-70vh" id="about">
+            <section class="lqd-section our-vision pt-50 min-h-70vh" id="about">
               <div
                 class="absolute w-full max-w-full bottom-0 pointer-events-none"
               >
@@ -1260,14 +1259,14 @@ document.addEventListener('DOMContentLoaded', function() {
 											<p class="lqd-adv-txt-item moving-txt">
 												<span>SilverTreee was founded with a simple mission — to fuel your growth through experiences that matter. Born during the pause of a global pandemic, we emerged as a team of seasoned professionals with over a decade of expertise in crafting brand stories that connect.</span>
 												<span class="vertical-align-top mx-5 lqd-adv-txt-fig relative inline-flex">
-													<img loading="lazy" class="h-auto max-w-full border-none rounded-0" width="50" height="50" src="./assets/images/link.png" alt="shape">
+													<img id="link" loading="lazy" class="h-auto max-w-full border-none rounded-0" width="50" height="50" src="./assets/images/link.png" alt="shape">
 												</span>
 											</p>
 
 											<p class="lqd-adv-txt-item moving-txt">
 												<span>We are a 360° experiential marketing agency, offering end-to-end solutions for events. From virtual meets and product launches to trade shows and award nights, we blend strategy, creativity, and flawless execution to deliver immersive brand experiences.</span>
 												<span class="vertical-align-top mx-5 lqd-adv-txt-fig relative inline-flex">
-													<img loading="lazy" class="h-auto max-w-full border-none rounded-0" width="50" height="50" src="./assets/images/creative-brain.png" alt="shape">
+													<img id="creative-brain" loading="lazy" class="h-auto max-w-full border-none rounded-0" width="50" height="50" src="./assets/images/creative-brain.png" alt="shape">
 												</span>
 											</p>
 
@@ -1285,7 +1284,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             
 
-              <div class="container mobile-intro">
+              <!-- <div class="container mobile-intro">
                 <div class="row">
                   <div class="col col-12 mb-220" data-custom-animations="true" data-ca-options='{"animationTarget": ".animation-element, .animation-element .split-inner .lqd-chars", "duration" : 800, "delay" : 13, "ease": "expo.out", "initValues": {"scaleX" : 0.8, "scaleY" : 0.8, "rotationZ" : 3, "opacity" : 0} , "animations": {"scaleX" : 1, "scaleY" : 1, "rotationZ" : 0, "opacity" : 1}}'>
               
@@ -1314,7 +1313,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
             </section>
             <!-- End Our Vision -->
@@ -1692,7 +1691,7 @@ document.addEventListener('DOMContentLoaded', function() {
                      <!-- Start Text Box -->
            <section class="video-section" id="video_section">
   <div style="justify-content: center;"
-                      class="flex flex-wrap mb-50"
+                      class="flex flex-wrap mb-50 video_section_div"
                       data-custom-animations="true"
                       data-ca-options='{"animationTarget": "h2", "ease": "bounce.in", "direction": "random","duration": 3000, "initValues":{ "opacity": 0 }, "animations":{ "opacity": 1 }}'
                     >
@@ -1718,8 +1717,8 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="swiper-wrapper"> 
         <!-- 9 video thumbnails with actual YouTube video IDs -->
         <div class="swiper-slide">
-          <div class="video-card" data-video="https://www.youtube.com/embed/kY9nYriftL0">
-            <img loading="lazy" src="./assets/images/youtube_thumbnails/1.webp" alt="Video Thumbnail">
+          <div class="video-card" data-video="https://www.youtube.com/embed/0M1zPbZ3Lec">
+            <img loading="lazy" src="./assets/images/youtube_thumbnails/colgate_ycmad_2024.webp" alt="Video Thumbnail">
             <div class="play-overlay">
               <div class="play-icon">▶</div>
             </div>
@@ -1728,8 +1727,8 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         
         <div class="swiper-slide">
-          <div class="video-card" data-video="https://www.youtube.com/embed/CR_NKs-uiRo">
-            <img loading="lazy" src="./assets/images/youtube_thumbnails/2.webp" alt="Video Thumbnail">
+          <div class="video-card" data-video="https://www.youtube.com/embed/KqLwBvvG664">
+            <img loading="lazy" src="./assets/images/youtube_thumbnails/colle_multi_city_launch.webp" alt="Video Thumbnail">
             <div class="play-overlay">
               <div class="play-icon">▶</div>
             </div>
@@ -1738,18 +1737,8 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         
         <div class="swiper-slide">
-          <div class="video-card" data-video="https://www.youtube.com/embed/06X-eL2A0hQ">
-            <img loading="lazy" src="./assets/images/youtube_thumbnails/3.webp" alt="Video Thumbnail">
-            <div class="play-overlay">
-              <div class="play-icon">▶</div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="swiper-slide">
-          <div class="video-card" data-video="https://www.youtube.com/embed/xR96S_8ebu0">
-            <img loading="lazy" src="./assets/images/youtube_thumbnails/4.webp" alt="Video Thumbnail">
+          <div class="video-card" data-video="https://www.youtube.com/embed/Pu2HOd19OOM">
+            <img loading="lazy" src="./assets/images/youtube_thumbnails/glenmark_asia_award_2022.webp" alt="Video Thumbnail">
             <div class="play-overlay">
               <div class="play-icon">▶</div>
             </div>
@@ -1759,7 +1748,17 @@ document.addEventListener('DOMContentLoaded', function() {
         
         <div class="swiper-slide">
           <div class="video-card" data-video="https://www.youtube.com/embed/SzfFLE3w6SM">
-            <img loading="lazy" src="./assets/images/youtube_thumbnails/5.webp" alt="Video Thumbnail">
+            <img loading="lazy" src="./assets/images/youtube_thumbnails/mars_MTD_2025.webp" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/_mEAD4ixej4">
+            <img loading="lazy" src="./assets/images/youtube_thumbnails/pandg_gulf_ogsm.webp" alt="Video Thumbnail">
             <div class="play-overlay">
               <div class="play-icon">▶</div>
             </div>
@@ -1768,8 +1767,18 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         
         <div class="swiper-slide">
+          <div class="video-card" data-video="https://www.youtube.com/embed/FhL_XjU94Tg">
+            <img loading="lazy" src="./assets/images/youtube_thumbnails/pentaloons_euphoria_2023.webp" alt="Video Thumbnail">
+            <div class="play-overlay">
+              <div class="play-icon">▶</div>
+            </div>
+
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
           <div class="video-card" data-video="https://www.youtube.com/embed/fMhrwujbixM">
-            <img loading="lazy" src="./assets/images/youtube_thumbnails/6.webp" alt="Video Thumbnail">
+            <img loading="lazy" src="./assets/images/youtube_thumbnails/pidilite_PLUB_hero_awards.webp" alt="Video Thumbnail">
             <div class="play-overlay">
               <div class="play-icon">▶</div>
             </div>
@@ -1779,7 +1788,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         <div class="swiper-slide">
           <div class="video-card" data-video="https://www.youtube.com/embed/2CdJkPC-bLg">
-            <img loading="lazy" src="./assets/images/youtube_thumbnails/7.webp" alt="Video Thumbnail">
+            <img loading="lazy" src="./assets/images/youtube_thumbnails/ppgap_conference_2024.webp" alt="Video Thumbnail">
             <div class="play-overlay">
               <div class="play-icon">▶</div>
             </div>
@@ -1788,18 +1797,8 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         
         <div class="swiper-slide">
-          <div class="video-card" data-video="https://www.youtube.com/embed/_xWIGeAS81c">
-            <img loading="lazy" src="./assets/images/youtube_thumbnails/8.webp" alt="Video Thumbnail">
-            <div class="play-overlay">
-              <div class="play-icon">▶</div>
-            </div>
-
-          </div>
-        </div>
-        
-        <div class="swiper-slide">
-          <div class="video-card" data-video="https://www.youtube.com/embed/FhL_XjU94Tg">
-            <img loading="lazy" src="./assets/images/youtube_thumbnails/9.webp" alt="Video Thumbnail">
+          <div class="video-card" data-video="https://www.youtube.com/embed/06X-eL2A0hQ">
+            <img loading="lazy" src="./assets/images/youtube_thumbnails/royal_canin_kick_off_2025.webp" alt="Video Thumbnail">
             <div class="play-overlay">
               <div class="play-icon">▶</div>
             </div>
@@ -1808,60 +1807,14 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
          <div class="swiper-slide">
-          <div class="video-card" data-video="https://www.youtube.com/embed/0M1zPbZ3Lec">
-            <img loading="lazy" src="./assets/images/youtube_thumbnails/10.webp" alt="Video Thumbnail">
+          <div class="video-card" data-video="https://www.youtube.com/embed/CR_NKs-uiRo">
+            <img loading="lazy" src="./assets/images/youtube_thumbnails/sika_day.webp" alt="Video Thumbnail">
             <div class="play-overlay">
               <div class="play-icon">▶</div>
             </div>
 
           </div>
         </div>
-
-          <div class="swiper-slide">
-          <div class="video-card" data-video="https://www.youtube.com/embed/Pu2HOd19OOM">
-            <img loading="lazy" src="./assets/images/youtube_thumbnails/11.webp" alt="Video Thumbnail">
-            <div class="play-overlay">
-              <div class="play-icon">▶</div>
-            </div>
-
-          </div>
-        </div>
-
-
-
-                     <div class="swiper-slide">
-          <div class="video-card" data-video="https://www.youtube.com/embed/KqLwBvvG664">
-            <img loading="lazy" src="./assets/images/youtube_thumbnails/12.webp" alt="Video Thumbnail">
-            <div class="play-overlay">
-              <div class="play-icon">▶</div>
-            </div>
-
-          </div>
-        </div>
-
-                            <div class="swiper-slide">
-          <div class="video-card" data-video="https://www.youtube.com/embed/M0UjBRXt58s">
-            <img loading="lazy" src="./assets/images/youtube_thumbnails/13.webp" alt="Video Thumbnail">
-            <div class="play-overlay">
-              <div class="play-icon">▶</div>
-            </div>
-
-          </div>
-        </div>
-        
-
-                                    <div class="swiper-slide">
-          <div class="video-card" data-video="https://www.youtube.com/embed/_mEAD4ixej4">
-            <img loading="lazy" src="./assets/images/youtube_thumbnails/14.webp" alt="Video Thumbnail">
-            <div class="play-overlay">
-              <div class="play-icon">▶</div>
-            </div>
-
-          </div>
-        </div>
-
-
-
 
       </div>
 
@@ -1886,17 +1839,17 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="container" data-custom-animations="true"
     data-ca-options='{"animationTarget": ".lqd-pf-grid", "ease": "power4.out", "initValues": {"y": "-55px", "rotationX" : 25} , "animations": {"y": "0px", "rotationX" : 0}}'>
     <div class="row">
-      <div class="col col-12 module-col">
+      <div class="col col-12 module-col mob-padding">
         <div class="flex flex-wrap" style="justify-content: center;"
           data-custom-animations="true"
           data-ca-options='{"animationTarget": "h2", "ease": "bounce.in", "direction": "random","duration": 3000, "initValues":{ "opacity": 0 }, "animations":{ "opacity": 1 }}'>
-          <h2 class="text-94 pb-50 font-medium -tracking-1 mr-0/25em sm:text-60 deliver-formob result text-dark section-heading">
+          <h2 class="text-94 pb-50 font-medium -tracking-1 mr-0/25em sm:text-60 deliver-formob result text-dark section-heading mob-padding">
             RESULTS
           </h2>
-          <h2 class="text-94 pb-30 font-medium -tracking-1 mr-0/25em sm:text-60 deliver-formob we text-dark section-heading">
+          <h2 class="text-94 pb-30 font-medium -tracking-1 mr-0/25em sm:text-60 deliver-formob we text-dark section-heading mob-padding">
             WE
           </h2>
-          <h2 class="text-94 pb-30 font-medium font-accent italic -tracking-1 mr-0/25em sm:text-60 deliver-formob text-dark section-heading">
+          <h2 class="text-94 pb-30 font-medium font-accent italic -tracking-1 mr-0/25em sm:text-60 deliver-formob text-dark section-heading mob-padding">
             DELIVERED
           </h2>
         </div>
@@ -2482,7 +2435,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <div class="container"     data-custom-animations="true"
                   data-ca-options='{"animationTarget": ".lqd-pf-grid", "ease": "power4.out", "initValues": {"y": "-55px", "rotationX" : 25} , "animations": {"y": "0px", "rotationX" : 0}}'>
                 <div class="row">
-                  <div class="col col-12 pb-50 pt-50 module-col">
+                  <div class="col col-12 pt-50 module-col mob-padding">
                     <div
                       class="flex flex-wrap " style="justify-content: center;"
                       data-custom-animations="true"
@@ -2540,7 +2493,7 @@ document.addEventListener('DOMContentLoaded', function() {
                               class="carousel-item-content relative w-full text-30 leading-1em"
                             >
                               <p class="text-white"> 
-                                <q class="quote-text">    We at Royal Canin would like to convey our sincere gratitude
+                                <q class="quote-text">We at Royal Canin would like to convey our sincere gratitude
                   for the exceptional work performed by Team Silver Tree in
                   executing our associate and customer events. The meticulous
                   planning and flawless on-ground execution exemplified
@@ -2570,7 +2523,7 @@ document.addEventListener('DOMContentLoaded', function() {
                               class="carousel-item-content relative w-full text-30 leading-1em"
                             >
                               <p class="text-white"> 
-                                <q class="quote-text"> A couple of years ago, we were in the process of shortlisting
+                                <q class="quote-text">A couple of years ago, we were in the process of shortlisting
                   vendors for our award function. Dealing with multiple vendors
                   was quite a task — until we met Varun’s team from Silvertreee.
                   Their professionalism, commitment, and thoughtful
@@ -2599,7 +2552,7 @@ document.addEventListener('DOMContentLoaded', function() {
                               class="carousel-item-content relative w-full text-30 leading-1em"
                             >
                               <p class="text-white"> 
-                                <q class="quote-text">     With silvertree team, you can expect all the right juices of
+                                <q class="quote-text">With silvertree team, you can expect all the right juices of
                   commitment, passion , responsibility flowing together. I have
                   partnered with them over 4 yrs now , this young team are
                   extremely responsible , looking to value add impromptu and
@@ -3049,8 +3002,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="row">
                   <div class="col col-12 pt-50 pb-50 module-col">
                     <div
-                      class="flex flex-wrap pb-20" style="justify-content: center;"
-                      data-custom-animations="true"
+                      class="flex flex-wrap mob-padding" style="justify-content: center;"
+                      data-custom-animations="true"  
                       data-ca-options='{"animationTarget": "h2", "ease": "bounce.in", "direction": "random","duration": 3000, "initValues":{ "opacity": 0 }, "animations":{ "opacity": 1 }}'
                     >
                       <h2
@@ -3816,13 +3769,13 @@ document.addEventListener('DOMContentLoaded', function() {
                       <h2 style="color: white !important;"
                         class=" text-94 font-medium -tracking-1 mr-0/25em sm:text-60 deliver-formob we section-heading"
                       >
-                      THE NUMBER
+                      THE 
                      
                       </h2>
                   
                       <h2 style="color: white !important;"
                         class=" text-94 font-medium font-accent italic -tracking-1 mr-0/25em sm:text-60 deliver-formob section-heading"
-                      >SPEAK
+                      >NUMBER SPEAK
                       </h2>
                     </div>
 
@@ -3870,6 +3823,7 @@ document.addEventListener('DOMContentLoaded', function() {
  
 									</div>
 								</div>
+
 								<div class="col col-12 col-xl-6 offset-xl-1 p-0">
 									<div class="px-10percent flex items-center align-content-center h-full relative module-counter">
 										<section class="lqd-section counter-boxes bg-white text-center box-shadow-bottom transition-all rounded-16 z-2 relative w-full">
@@ -3929,17 +3883,14 @@ document.addEventListener('DOMContentLoaded', function() {
 										</div>
 									</div>
 								</div>
+                
 
 							</div>
 						</div>
 					</section>
 					<!-- End Digital Experience Counter -->
 
-               	<div class="lqd-section module-sections relative flex flex-col items-center gap-60 pt-60 pb-60 px-10 bg-top-center bg-cover bg-no-repeat transition-all shadow-top lg:border-radius-0 lg:py-0" style="background-color: #c0c0c0;">
-
-                  
- 
-
+               	<div class="lqd-section module-sections relative flex flex-col items-center gap-60 pt-80 pb-80 px-10 bg-top-center bg-cover bg-no-repeat transition-all shadow-top lg:border-radius-0 lg:py-0" style="background-color: #c0c0c0;">
 						<!-- Start CTA -->
 						<section class="lqd-section cta flex flex-wrap items-stretch justify-between flex-grow-1 transition-all rounded-30 bg-transparent bg-no-repeat bg-center px-60 sm:items-end sm:flex-col" id="cta" data-custom-animations="true" data-ca-options='{"animationTarget": ".animation-element, .btn", "duration" : 800, "startDelay" : 300, "delay" : 75, "ease": "expo.out", "initValues": {"y": "40px", "opacity" : 0} , "animations": {"y": "0px", "opacity" : 1}}'>
 							<div class="w-40percent flex flex-col justify-center transition-bg p-10 lg:w-50percent sm:w-full ">
@@ -4011,10 +3962,10 @@ document.addEventListener('DOMContentLoaded', function() {
      
 
             <!-- Contact Section -->
-    <section id="contact" class="contact section pb-50 pt-50">
+    <section id="contact" class="contact section pt-50">
 
        <div
-                      class="flex flex-wrap pb-40" style="justify-content: center;"
+                      class="flex flex-wrap pb-30" style="justify-content: center;"
                       data-custom-animations="true"
                       data-ca-options='{"animationTarget": "h2", "ease": "bounce.in", "direction": "random","duration": 3000, "initValues":{ "opacity": 0 }, "animations":{ "opacity": 1 }}'
                     >
@@ -4140,7 +4091,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="container">
             <div class="row items-center">
               <div
-                class="w-40percent relative flex flex-wrap lg:w-50percent sm:w-full"
+                class="w-70percent relative flex flex-wrap lg:w-50percent sm:w-full"
               >
                 <div class="ld-fancy-heading relative">
                   <h4
@@ -4190,7 +4141,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="container">
             <div class="row">
               <div
-                class="w-30percent flex flex-auto flex-col lg:w-33percent sm:w-50percent"
+                class="w-25percent flex flex-auto flex-col lg:w-33percent sm:w-50percent"
               >
                 <div class="ld-fancy-heading relative">
                   <h3
@@ -4265,7 +4216,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
               </div>
               <div
-                class="w-20percent flex flex-auto flex-col mb-20 lg:w-33percent sm:w-50percent"
+                class="w-25percent flex flex-auto flex-col mb-20 lg:w-33percent sm:w-50percent"
               >
                 <div class="ld-fancy-heading relative">
                   <h3
@@ -4314,7 +4265,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
               </div>
               <div
-                class="w-20percent flex flex-auto flex-col mb-20 lg:w-33percent sm:w-full"
+                class="w-25percent flex flex-auto flex-col mb-20 lg:w-33percent sm:w-full"
               >
                 <div class="ld-fancy-heading relative">
                   <h3
@@ -4353,11 +4304,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
               </div>
               <div
-                class="w-30percent flex flex-auto flex-col mb-20 lg:w-full "
+                class="w-25percent flex flex-auto flex-col mb-20 lg:w-full "
               >
                 <div class="ld-fancy-heading relative">
                   <h3
-                    class="ld-fh-element inline-block relative text-15 uppercase tracking-2 mb-3em text-white-30"
+                    class="ld-fh-element inline-block relative text-15 uppercase tracking-2 text-white-30"
                   >
                     KEEP IN TOUCH
                   </h3>
@@ -4365,7 +4316,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div
                   class="ld-sf relative ld-sf--input-underlined ld-sf--button-naked ld-sf--size-sm ld-sf--circle ld-sf--inputs-has-border ld-sf--border-thin ld-sf--button-show ld-sf--button-inside"
                 >
-                  <form class="ld_sf_form relative" method="post" action="#">
+                  <!-- <form class="ld_sf_form relative" method="post" action="#">
                     <p class="relative">
                       <input
                         type="email"
@@ -4389,45 +4340,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         </span>
                       </span>
                     </button>
-                  </form>
-                  <div class="ld_sf_response"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="lqd-section module-info">
-          <div class="container">
-            <div class="row items-center">
-              <div class="col-12 col-md-4">
-                <div class="lqd-imggrp-single block relative">
-                  <div
-                    class="lqd-imggrp-img-container inline-flex relative items-center justify-center"
-                  >
-                    <figure class="w-full relative">
-                      <img
-                        width="180"
-                        height="11"
-                        src="./assets/images/top-logo.png"
-                        alt="asymetric 9"
-                      />
-                    </figure>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="col col-12 col-md-4 text-center sm:text-start module-col"
-              >
-                <div class="ld-fancy-heading relative">
-                  <p
-                    class="ld-fh-element mb-0/5em inline-block relative text-14 text-white-50"
-                  >
-                    © 2025 - 2026 Silvertreee Media Solutions Pvt Ltd | All rights reserved.
-                  </p>
-                </div>
-              </div>
-              <div class="col col-12 col-md-4 text-end sm:text-start">
-  <div class="social-icons-wrapper gap-25">
+                  </form> -->
+                    <div class="social-icons-wrapper gap-25">
   <!-- Instagram -->
   <a
     class="icon social-icon social-icon-instagram"
@@ -4466,7 +4380,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 </div>
+                  <div class="ld_sf_response"></div>
+                </div>
               </div>
+            </div>
+          </div>
+        </section>
+        <section class="lqd-section module-info">
+          <div class="container">
+            <div class="row items-center justify-center">
+           
+              <div
+                class="col col-12 col-md-4 text-center sm:text-start"
+              >
+                <div class="ld-fancy-heading relative">
+                  <p
+                    class="ld-fh-element mb-0/5em inline-block relative text-14 text-white-50"
+                  >
+                    © 2025 - 2026 Silvertreee Media Solutions Pvt Ltd | All rights reserved.
+                  </p>
+                </div>
+              </div>
+          
             </div>
           </div>
         </section>
