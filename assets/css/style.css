@@ -1092,11 +1092,11 @@ body {
     margin-bottom: 40px;
   }
 
-  .founder_sec{
+  .founder_sec {
     bottom: auto !important;
   }
 
-  .module-col{
+  .module-col {
     padding-top: 30px !important;
   }
 
@@ -1104,7 +1104,7 @@ body {
     margin: 0rem;
   }
 
-  .quote-text{
+  .quote-text {
     font-size: 1rem !important;
   }
 
@@ -1113,11 +1113,10 @@ body {
     padding-right: 0%;
   }
 
-  .module-col{
+  .module-col {
     padding-top: 30px;
   }
 }
-
 
 .lqd-fb-style-6 .lqd-fb-content {
   padding: 0rem 0rem !important;
@@ -1127,7 +1126,7 @@ body {
   background-color: #000000 !important;
 }
 
-.founder_sec{
+.founder_sec {
   position: relative;
   bottom: 2rem;
 }
@@ -1350,7 +1349,7 @@ q {
     height: auto !important;
   }
 
-  .video_section_div{
+  .video_section_div {
     margin-bottom: 30px;
   }
 }
@@ -1371,7 +1370,9 @@ q {
   padding: 0.75rem 1rem;
   background: #ffffff;
   color: #000000;
-  margin-left: 0.5rem;
+  border-radius: 100px;
+  color: rgb(0 0 0);
+  border: 3px solid black;
 }
 
 .module-col {
@@ -1483,8 +1484,8 @@ q {
     margin-bottom: 20px;
   }
 
-  .mob-padding{
-       padding-top: 20px;
+  .mob-padding {
+    padding-top: 20px;
     padding-bottom: 20px;
   }
 }
@@ -1775,7 +1776,6 @@ footer {
   .founder_sec .col-lg-3 {
     width: 100% !important;
   }
-
 }
 
 .number-speak {
