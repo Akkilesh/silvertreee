@@ -1352,6 +1352,36 @@ q {
   .video_section_div {
     margin-bottom: 30px;
   }
+
+  .margin-zero{
+    margin-bottom: 0rem;
+  }
+
+  #clientel{
+    margin: 1rem 0rem;
+  }
+
+  .dot{
+    color: white;
+    background-color: white;
+  }
+
+  .mind-behind{
+    padding: 20px 0rem;
+  }
+
+  .founder_sec{
+    gap: 1.25rem;
+  }
+
+  .mind-1, .mind-2, .mind-3{
+    padding: 0rem 1rem;
+  }
+
+  .team-member-pad{
+    padding: 20px 0rem;
+    padding-bottom: 0rem;
+  }
 }
 
 .bi-linkedin {
@@ -1491,18 +1521,38 @@ q {
   }
 
   .first-padding {
-    padding: 1.25rem 0rem;
+    padding: 20px 0rem;
   }
 
-  .lqd-section.number-speak{
+  .video-section {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .topandbottom {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .bottom-pad{
+    padding-bottom: 20px !important;
+    margin-bottom: 0rem;
+  }
+
+  .video_section_div {
+    margin-bottom: 20px;
+  }
+
+  .lqd-section.number-speak {
     padding-top: 1.25rem;
   }
 
-  .hundreds, .hundreds-2{
+  .hundreds,
+  .hundreds-2 {
     font-size: 1.5rem;
   }
 
-  .lqd-highlight-grow-left{
+  .lqd-highlight-grow-left {
     line-height: 1.5rem;
   }
 }
