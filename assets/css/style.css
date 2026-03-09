@@ -1487,8 +1487,23 @@ q {
   }
 
   .mob-padding {
-    padding-top: 20px;
     padding-bottom: 20px;
+  }
+
+  .first-padding {
+    padding: 1.25rem 0rem;
+  }
+
+  .lqd-section.number-speak{
+    padding-top: 1.25rem;
+  }
+
+  .hundreds, .hundreds-2{
+    font-size: 1.5rem;
+  }
+
+  .lqd-highlight-grow-left{
+    line-height: 1.5rem;
   }
 }
 
