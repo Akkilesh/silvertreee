@@ -1879,6 +1879,10 @@ footer {
     text-align: center;
   }
 
+  .module-menu{
+    padding-bottom: 0rem !important;
+  }
+
   .contact .contact-form-container .contact-form .row {
     margin-bottom: 20px;
   }
