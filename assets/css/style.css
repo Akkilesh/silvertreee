@@ -1069,12 +1069,15 @@ body {
 
 @media (max-width: 992px) {
   .contact .contact-form-container {
-    padding: 40px 0;
+    padding: 0px 0px !important;
   }
 
   .contact .contact-sidebar {
-    padding: 40px 30px;
-    margin-bottom: 40px;
+    padding: 20px 0px !important;
+  }
+
+  .module-top{
+    padding-top: 20px !important;
   }
 }
 
@@ -1089,7 +1092,6 @@ body {
 
   .contact .contact-sidebar {
     padding: 40px 30px;
-    margin-bottom: 40px;
   }
 
   .founder_sec {
@@ -1844,6 +1846,22 @@ footer {
     margin-bottom: 1.5rem;
   }
 
+  .main-nav li a{
+    padding-bottom: 1.5rem;
+  }
+
+  .bar.inline-block{
+    color: white !important;
+  }
+
+  .ready-started{
+    padding: 2rem 0rem;
+  }
+
+  .no-padding{
+    padding-bottom: 0rem;
+  }
+
   .carousel-control-prev,
   .carousel-control-next {
     width: 40px;
@@ -1857,7 +1875,7 @@ footer {
 
 @media (max-width: 768px) {
   .contact .contact-form-container .form-intro {
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     text-align: center;
   }
 
@@ -1871,6 +1889,7 @@ footer {
 
   .contact .contact-sidebar {
     padding: 30px 25px;
+    padding-bottom: 0rem;
   }
 
   .contact .contact-sidebar .contact-method {
