@@ -1879,6 +1879,18 @@ footer {
     text-align: center;
   }
 
+  .for_mob{
+    font-size: 1.1rem !important;
+  }
+
+  .txt-rotate-keywords{
+    width: 25rem !important;
+  }
+
+  .txt-rotate-keywords-inner{
+    width: 10rem;
+  }
+
   .module-menu{
     padding-bottom: 0rem !important;
   }

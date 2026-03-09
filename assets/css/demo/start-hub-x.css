@@ -449,7 +449,7 @@
 
 @media (max-width: 767px) {
 	.cta {
-		background-image: url("../../images/demo/start-hub-x/bg/cta-bg-m.svg");
+		background-image: url("../../images/demo/start-hub-x/bg/cta-bg-m_old.svg");
 		background-size: cover;
 		flex-grow: 0;
 		align-self: initial;
