@@ -116,7 +116,7 @@ body {
 #banner {
   position: relative;
   overflow: hidden;
-  height: 90vh !important; /* full screen */
+  height: 95vh !important; /* full screen */
 }
 
 #banner {
