@@ -19523,7 +19523,7 @@ ul.pagination .prev {
 }
 
 .lqd-pf-item-style-4 .lqd-pf-title:before {
-	content: "—";
+	content: "-";
 	margin-bottom: 0.5em;
 }
 

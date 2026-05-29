@@ -16457,7 +16457,7 @@ ul.pagination .prev {
   transition: box-shadow 0.65s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .lqd-pf-item-style-4 .lqd-pf-title:before {
-  content: "—";
+  content: "-";
   margin-bottom: 0.5em;
 }
 .lqd-pf-item-style-4 .lqd-pf-title,
